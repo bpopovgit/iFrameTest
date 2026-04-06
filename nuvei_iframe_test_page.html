@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>Nuvei Cashier iFrame Test</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      height: 100%;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      background: #f4f6f8;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #f4f6f8;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    .page {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: #f4f6f8;
+    }
+
+    .header {
+      padding:
+        max(16px, env(safe-area-inset-top))
+        16px
+        14px
+        16px;
+      background: #0f172a;
+      color: #fff;
+    }
+
+    .header h1 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .header p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.45;
+      opacity: 0.92;
+    }
+
+    .frame-wrap {
+      flex: 1;
+      padding: 0;
+      min-height: 0;
+    }
+
+    .frame-card {
+      width: 100%;
+      min-height: calc(100dvh - 84px);
+      background: #fff;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      min-height: calc(100dvh - 84px);
+      height: calc(100dvh - 84px);
+      border: 0;
+      background: #fff;
+    }
+
+    @supports not (height: 100dvh) {
+      .page {
+        min-height: 100vh;
+      }
+
+      .frame-card,
+      iframe {
+        min-height: calc(100vh - 84px);
+        height: calc(100vh - 84px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .header h1 {
+        font-size: 17px;
+      }
+
+      .header p {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <h1>Nuvei Cashier iFrame Test</h1>
+      <p>
+        iPhone-optimized wrapper for testing viewport height, scrolling, and
+        overlap behavior.
+      </p>
+    </div>
+
+    <div class="frame-wrap">
+      <div class="frame-card">
+        <iframe
+          src="https://ppp-test.safecharge.com/ppp/purchase.do?merchant_id=6655150628621012064&merchant_site_id=212228&user_token=auto&user_token_id=UserID_6924085382&userid=UserID_6924085382&item_open_amount_1=true&item_min_amount_1=1&item_max_amount_1=100&item_name_1=Cashier%20Test%20product&item_amount_1=10&item_quantity_1=1&item_discount_1=0&numberofitems=1&total_tax=0&discount=0&total_amount=10.00&currency=EUR&version=4.0.0&encoding=UTF-8&first_name=test&last_name=test&address1=test&city=test&zip=123456&country=PT&phone1=7098667507&email=6474919404%40gmail.com&payment_method=cc_card&success_url=https%3A%2F%2Fhome.stefanovweb.eu%2Fresponse.php&pending_url=https%3A%2F%2Fhome.stefanovweb.eu%2Fresponse.php&error_url=https%3A%2F%2Fhome.stefanovweb.eu%2Fresponse.php&notify_url=https%3A%2F%2Fhome.stefanovweb.eu%2Fdmn.php%3Fdmnorigin%3DCheckSumCalculator&time_stamp=2026-04-06.09%3A35%3A29&checksum=37e3d3e6c8490b47d8a1e0042c892158&"
+          title="Nuvei Cashier Test"
+          allow="payment *"
+          loading="eager"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
